@@ -7,12 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Formularios</title>
     <link rel="stylesheet" href="./css/Style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <script src="./app.js"></script>
+
 </head>
 
 <body>
     <header>
         <h1>Formularios</h1>
     </header>
+
     <form action="">
         <fieldset>
             <legend>Datos personales</legend>
@@ -26,7 +30,14 @@
             </div>
             <div class="control-group">
                 <label for="pais">Código de País</label>
-                <input type="text" name="pais" id="pais" value="ES" maxlength="2" placeholder="Sólo códigos">
+                <input type="text" name="pais" id="pais" maxlength="2" list="paises-list">
+                <datalist id="paises-list">
+                    <option>ES</option>
+                    <option>FR</option>
+                    <option>GR</option>
+                    <option>HL</option>
+                    <option>GB</option>
+                </datalist>
             </div>
             <div class="control-group">
                 <label for="password">Password</label>
@@ -54,21 +65,101 @@
 
             </div>
             <div class="control-group">
-                <label for="Buscar">Buscar</label>
+                <label for="buscar">Buscar</label>
                 <input type="search" name="buscar" id="buscar" >
+            </div>
+            <div class="control-group">
+                <label for="cv">Curriculum</label>
+                <input type="file" name="cv" id="cv">
+            </div>
+    
+        </fieldset>
+
+        <fieldset>
+            <legend>Información extra</legend>
+            <div class="textarea-group">
+                <textarea name="info" id="info"></textarea>
             </div>
         </fieldset>
 
         <fieldset>
-                <legend>Información extra</legend>
-                <textarea name="info" id="info" cols="30" rows="10"></textarea>
-            </fieldset>
+            <div class="check-group">
+                <label for="accepted">Leidas y aceptadas las condiciones</label>
+                <input type="checkbox" name="accepted" id="accepted" checked required>
+                    <!-- el checked es ilegal y no etico -->   
+            </div>
+            <div class="check-group">
+                <label for="coockies">Acepto coockies</label>
+                <input type="checkbox" name="coockies" id="coockies" checked>        
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Turno</legend>
+            <input type="radio" name="turno" id="manana" value="mañana" checked>
+            <label for="manana">Mañana</label>
+            <input type="radio" name="turno" id="tarde" value="tarde">
+            <label for="tarde">Tarde</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Aficiones</legend>
+            <input type="checkbox" name="" id="deporte">
+            <label for="deporte">Deporte</label>
+            <input type="checkbox" name="musica" id="musica">
+            <label for="musica">Música</label>
+            <input type="checkbox" name="lectura" id="lectura">
+            <label for="lectura">Lectura</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Curiosidades</legend>
+            <label for="color">Elige color jijiji</label>
+            <input type="color" name="color" id="color">
+            <label for="edad">Edad</label>
+            <input type="number" name="edad" id="edad" min="18" max="65">
+            <label for="hijos">Número de hijos</label>
+            <input type="range" name="hijos" id="hijos" min="0" max="10"> <!-- step="2" salta de 2 en 2 -->
+            <label for="fnac">Fecha de nacimiento</label>
+            <input type="date" name="fnac" id="fnac">
+        </fieldset>
+
+        <fieldset>
+            <legend>Curso</legend>
+            <select name="curso" id="curso" size="8">
+                <optgroup label="Programación">
+                    <option value="Web">Paginas Web</option>
+                    <option value="PHP">Programacion PHP</option>
+                    <option value="Java">Desarrollo en Java</option>   
+                </optgroup>
+                
+                <optgroup label="Sistemas">
+                    <option value="SisWeb">Servidores Web</option>
+                    <option value="Win">Sevidores Windows</option>
+                    <option value="Lin">Servidores Linux</option>
+                </optgroup>
+                
+            </select>
     
+        </fieldset>    
 
-        <button type="submit">Enviar</button>
+        <fieldset>
+            <input type="button" onclick="saludar()" value="Button">    <!-- Este es para JS, no hace nada -->
+            <input type="submit" value="Submit">    <!-- Envía directamente -->
+            <input type="reset" value="Reset">      <!-- resetea los datos de los boxes -->
+
+            <button type="button" onclick="saludar()">
+                    <i class="fas fa-hands-helping"></i>
+            </button>
+            <button type="submit">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+            <button type="reset">
+                <i class="fas fa-eraser"></i>
+            </button>  
+        </fieldset>
+    
     </form>
-
-
 
 </body>
 
