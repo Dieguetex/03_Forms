@@ -1,0 +1,31 @@
+body {
+  margin: 2rem;
+}
+
+.control-group {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+input[type=text]:required {
+  box-shadow: 0.2rem 0.1rem 0.2rem 0.2rem gray;
+}
+
+input[type=text]:invalid {
+  border: 1px solid red;
+}
+
+input[type=text]:optional {
+  border: solid 1px grey;
+}
+
+input[type=checkbox] {
+  width: 6rem;
+  background-color: aqua;
+  border: 1px solid red;
+}
+
+/*# sourceMappingURL=css/Style.css.map */

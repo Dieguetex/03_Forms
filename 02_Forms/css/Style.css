@@ -32,4 +32,16 @@ textarea {
   height: 10rem;
 }
 
+*:required {
+  border: 1px solid red;
+  color: crimson;
+  /* box-shadow: 2rem 1rem 2rem 2rem gray; */
+}
+
+input[type=checkbox] {
+  color: green;
+  background-color: green;
+  border: 1px red solid;
+}
+
 /*# sourceMappingURL=css/Style.css.map */
