@@ -1,0 +1,65 @@
+doctype
+html(lang=idioma)
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title=titulo
+    body
+        h1 Pug Avanzado
+
+        //- Lógica mediante JS
+            Condicional IF
+
+        //- -let nombre = "Pepe"
+        -let nombre = "María"
+        -if (nombre == 'Pepe') {
+            p Hola otra vez, Pepe
+        - } else {
+            p Hola #{nombre}, donde está Pepe?
+        - }
+
+        //- Lógica nativa (Build-in) Pug
+            Condicional IF
+
+        //- - nombre = "Pepe"
+        -nombre = "María"
+        if (nombre === 'Pepe') 
+            p Hola otra vez, Pepe
+        else 
+            p Hola #{nombre}, donde está Pepe?
+
+
+        //- Condicional CASE
+            cambiar la variable para ver diferentes casos
+        -name = "Carlos"
+        case name  
+            when "Alicia"
+                p Hola #{name}, donde está Pepe?
+            when "Pepe"
+                p Hola #{name}
+            default
+                p Hola #{name}!
+ 
+
+        //- Iteraciones EACH
+        - let aSecciones = ['Inicio', 'Porfolio', 'Clientes', 'About'] 
+        nav 
+            ul 
+                each seccion in aSecciones 
+                    li: a(href="#"+seccion.toLowerCase())= seccion
+
+
+        //- los values son opcionales
+        //- Array de obnjetos para hacer un formulario
+        
+        //- -let aOpciones = [{nombre:'C#', codigo:'37'}, {nombre:'Java', codigo:'84'}, {nombre:'JavaScript', codigo:'13'}]
+            metido en config.json
+        -let aOpciones = cursos
+        -let optName = 'cursos'
+        form(action="")
+            label(for=optName) Selecciona un curso
+            select(name=optName id=optName)
+                each opcion in aOpciones
+                    option(value= opcion.codigo)= opcion.nombre
+            button(type="submit") enviar

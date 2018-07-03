@@ -1,0 +1,80 @@
+//- VARIABLES HECHAS EN EL FICHERO CONFIG.JSON E IMPORTADAS MEDIANTE PACKAGE JSON
+
+doctype
+html(lang=idioma)
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        //- title #{titulo}
+        title= titulo
+    body
+
+    // Esto es un comentario 
+
+    // Esto es un comentario 
+        de varias lineas usando tabulador
+
+    //- Esto es un comentario que solo aparece en PUG
+    //- Esto es un comentario que solo aparece en PUG
+        de varias líneas
+
+
+    //- Añadiendo contenid en varias líneas
+    p Lorem ipsum dolor sit amet 
+        | consectetur adipisicing elit. 
+        | Aspernatur, veniam repudiandae! 
+        | Dignissimos est provident non nam? 
+        | Natus nemo mollitia doloribus in? 
+        | Atque, officia aspernatur! Consectetur 
+        | quas nesciunt ratione temporibus. Suscipit!
+
+    //- Atajo: añadiendo contenid en varias líneas
+    p.
+        Lorem ipsum dolor sit, 
+        amet consectetur adipisicing elit. 
+        Pariatur exercitationem, harum deserunt 
+        atque laboriosam facere nulla autem sint 
+        numquam! Tempore natus ipsam amet, eos 
+        alias tempora rerum qui cumque totam?
+
+    //- Incluir una etiqueta en una palabra dentro de un párrafo
+    h1 ejemplos de 
+        i PUG
+
+    p Pug es un
+        b  lenguaje de plantillas 
+        |basado en JS 
+    
+    p Pug es un <b>lenguaje de plantillas</b> basado en JS
+
+    //- Atributos
+    div(id="div1", class="principal")
+
+    //- ATAJOS Atributos
+    div#div2.principal
+    #div3.principal
+
+    //-bloques de expansion
+    nav
+        ul
+            -let url= "#"+menuItems[0].toLowerCase()
+            li: a(href=url) #{menuItems[0]}
+            //- li: a(href="#"+menuItems[0].toLowerCase()) #{menuItems[0]}
+
+            -url= './page1.html'
+            li: a(href= url) #{menuItems[1]}
+            //-li
+                a(href="#about") #{menuItems[1]} 
+
+            -url= "#"+menuItems[2].toLowerCase()
+            li    
+                a(href= url) #{menuItems[2]}
+
+
+    //- Variables con HTML. No se puede inyectar html por defecto. Se escapa el código con "!"
+    -let html = "<p>Esto es un párrafo</p>"
+    div= html
+    
+    -let html1 = "<script>alert('Estás infectado!')</script>"
+    div!= html1
