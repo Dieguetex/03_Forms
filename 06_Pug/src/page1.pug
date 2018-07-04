@@ -63,3 +63,13 @@ html(lang=idioma)
                 each opcion in aOpciones
                     option(value= opcion.codigo)= opcion.nombre
             button(type="submit") enviar
+
+        //- Iteraciones en bucle WHILE equivalentes a un bucle FOR
+
+        -let aSections = ['Inicio', 'Porfolio', 'Clientess', 'About']
+        nav
+            ul
+                -let i = 0
+                while i < aSections.length
+                    li: a(href="#"+aSections[i].toLowerCase())= aSections[i]
+                    -i++
