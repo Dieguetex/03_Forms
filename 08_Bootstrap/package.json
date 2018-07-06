@@ -1,15 +1,12 @@
 {
-  "name": "07_proyecto_Pug",
+  "name": "08_Bootstrap",
   "version": "1.0.0",
   "description": "paginas_web_forms Ejercicio de CSS. unidad 3 del módulo 1",
   "main": "index.js",
   "scripts": {
-    "start": "parallelshell \"npm run server\" \"npm run pug\" \"npm run scss\"",
+    "start": "parallelshell \"npm run server\" \"npm run scss\"",
     "server": "http-server",
-    "watch:sass": "nodemon -e src/scss -x \"npm run sass\"",
-    "sass": "sass src/scss:dist/css",
-    "scss": "node-sass --watch src/scss -o dist/css",
-    "pug": "pug -w -P -O ./config.json -p ./src/pug/partials ./src/pug -o ./dist",
+    "scss": "node-sass --watch scss -o css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

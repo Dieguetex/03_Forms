@@ -1,0 +1,17 @@
+h1 {
+  font-family: 'Roboto', sans-serif; }
+
+.borde {
+  border: 1px solid;
+  background-color: bisque; }
+
+.header-line {
+  border-bottom: 1px solid silver;
+  background-color: #659eb4;
+  margin-bottom: 3rem;
+  margin-left: .5rem;
+  margin-right: .5rem; }
+
+.footer-line {
+  border-top: 1px solid silver;
+  background-color: #659eb4; }
